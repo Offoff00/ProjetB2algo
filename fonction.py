@@ -15,3 +15,16 @@ def board_to_str(board):
         lines.append("| " + " ".join(TOK[board[r][c]] for c in range(COLS)) + " |")
     lines.append("+" + "--" * COLS + "-+")
     return "\n".join(lines)
+
+def is_valid_col(board, col):
+    """True si 0 <= col < COLS et si la case du haut est vide."""
+    return 0 <= col < COLS and board[0][col] == EMPTY
+
+def drop(board, col, player):
+    """Fait tomber le pion dans la colonne."""
+    for r in range(ROWS - 1, -1, -1):
+        if board[r][col] == EMPTY:
+            board[r][col] = player
+            return r, col
+    return None
+
