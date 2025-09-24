@@ -28,3 +28,10 @@ def drop(board, col, player):
             return r, col
     return None
 
+def check_win(board, player):
+    """Vérifié les 4 alignés (horizontal)"""
+    for r in range(ROWS):
+        for c in range(COLS - 3):
+            if all(board[r][c + i] == player for i in range(4)):
+                return True
+    return False
