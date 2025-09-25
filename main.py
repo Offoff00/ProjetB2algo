@@ -16,11 +16,20 @@ def main():
     while True:
         col = ask_column(player)
         if not p4.is_valid_col(board, col):
-            print("Colonne pleine ou invalide. Choisis-en une autre.\n")
+            print("Colonne pleine ou invalide. Choisis une autre.\n")
             continue
 
         p4.drop(board, col, player)
         print(p4.board_to_str(board))
+ # victoire et match nul
+        if p4.check_win(board, player):
+            print(f"BRAVO Joueur {p4.TOK[player]} gagne ! GG Champion")
+            break
+
+        if p4.is_draw(board):
+            print("Match nul. La grille est pleine.")
+            break
+ # Sinon on passe au joueur suivant
         player = p4.switch_player(player)
 
 if __name__ == "__main__":
