@@ -9,6 +9,10 @@ Les différents pions seront representees sous forme de X et O. X pour les rouge
 
 Comment jouer :
 
+Entrer "pyhton main.py" dans un terminal afin de démarrer.
+
+le jeu va se lancer.
+
 À ton tour, entre un numéro de colonne (1 à 7).
 
 Le pion tombe au plus bas de cette colonne.
